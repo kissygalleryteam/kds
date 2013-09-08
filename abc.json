@@ -1,0 +1,14 @@
+{
+    "name": "kds",
+    "version": "1.0",
+    "desc": "这是一个集合了kissy各种api的demo库",
+    "cover": "",
+    "tag":"kissy demo gallery util doc 文档",
+    "author": {
+        "name": "zhangting",
+        "email": "zhangting@taobao.com",
+        "page": "https://github.com/czy88840616"
+    },
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}

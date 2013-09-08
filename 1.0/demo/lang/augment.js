@@ -1,0 +1,20 @@
+{
+	"package":"lang",
+	"name":"augment",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/augment.html",
+	"desc":"经常用于给一个类添加原型方法，经常出现在组件的初始化方法中，和mix用法基本一致",
+	"tip":"",
+	"demo":[
+		{
+			"title":"创建一个类，并且附加一个方法",
+			"code":"http://runjs.cn/gist/mjyuqgaa/js",
+			"author":"zhangting",
+			"version":">=1.3"
+		},
+		{
+			"title":"测试白名单和覆盖",
+			"code":"http://runjs.cn/gist/ps3irjvj/js",
+			"author":"zhangting"
+		}
+	]
+}
