@@ -26,8 +26,10 @@ var methodTpl = juicer([
             '<small class="ks-version">适用kissy版本：{@if it.version}${it.version}{@else}通用{@/if}</small></h4>',
             '{@if it.desc}<p>${it.desc}</p>{@/if}',
             '{@if it.tip}<div class="alert alert-info">${it.tip}</div>{@/if}',
-            '{@if it.code}',
-            '<script src="${it.code}"></script>',
+            '{@if /jsbin/.test(it.code)}',
+            '<a class="jsbin-embed" href="${it.code}">JS Bin</a>',
+            '{@else if /jsfiddle/.test(it.code)}',
+            '<iframe width="100%" height="300" src="${it.code}" allowfullscreen="allowfullscreen" frameborder="0"></iframe>',
             '{@/if}',
         '</div>',
         '{@/each}',
@@ -77,6 +79,8 @@ $(function(){
 						container.html(methodTpl.render({
 							data: data
 						}));
+
+						JSBIN.flush();
 					}
 
 					//需要选中当前的菜单
@@ -103,6 +107,3 @@ $(function(){
 	render();
 
 });
-
-
-$('#content').html('<script src="http://runjs.cn/gist/ps3irjvj/js"></script>');

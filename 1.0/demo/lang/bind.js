@@ -1,0 +1,14 @@
+{
+	"package":"lang",
+	"name":"bind",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/bind.html",
+	"desc":"返回一个固定上下文的函数",
+	"tip":"api很拗口，其实就类似于jq的proxy函数，让原有的函数上下文不变，特别适合在事件中使用",
+	"demo":[
+		{
+			"title":"官方api用例",
+			"code":"http://jsbin.com/abixozo/1/embed?js,console",
+			"author":"zhangting"
+		}
+	]
+}
