@@ -2,17 +2,14 @@
 	"package":"lang",
 	"name":"buffer",
 	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/buffer.html",
-	"desc":"经常用于给一个类添加原型方法，经常出现在组件的初始化方法中，和mix用法基本一致",
-	"tip":"经常会和KISSY.Event.Target进行合并，然后让类可以定义一些自定义事件",
+	"desc":"让一个本应该执行的方法晚一些执行",
+	"tip":"经常用在scroll等连续事件中",
 	"demo":[
 		{
-			"title":"创建一个类，并且附加一个方法",
-			"code":"http://jsbin.com/UwahAJo/1/embed?js,console",
-			"author":"zhangting"
-		},
-		{
-			"title":"测试白名单和覆盖",
-			"code":"http://jsbin.com/IjePOwO/1/embed?js,console",
+			"title":"在响应式切换中做一些事情",
+			"desc":"在resize事件中减少触发函数的次数",
+			"tip":"此demo直接在浏览器看比较容易http://jsbin.com/ucaWAzo/1/",
+			"code":"http://jsbin.com/ucaWAzo/1/embed?html,js",
 			"author":"zhangting"
 		}
 	]

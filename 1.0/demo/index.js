@@ -14,7 +14,7 @@ var methodTpl = juicer([
         '<div class="crumb">',
             '<a href="#">KISSY Demo Store</a> > <a href="#${data.package}">Lang</a> > <span>${data.name}</span>',
         '</div>',
-        '<h1>${data.name}{@if data.doc} <a href="${data.doc}"><img src="flat-ui/images/icons/clipboard@2x.png"></a>{@/if}</h1>',
+        '<h1>${data.name}{@if data.doc} <a href="${data.doc}" target="_blank"><img src="flat-ui/images/icons/clipboard@2x.png"></a>{@/if}</h1>',
         '{@if data.desc}<p>${data.desc}</p>{@/if}',
         '{@if data.tip}<div class="alert alert-info">${data.tip}</div>{@/if}',
     '</div>',
