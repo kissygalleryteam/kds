@@ -1,19 +1,13 @@
 {
 	"package":"lang",
-	"name":"augment",
-	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/augment.html",
-	"desc":"经常用于给一个类添加原型方法，经常出现在组件的初始化方法中，和mix用法基本一致",
-	"tip":"经常会和KISSY.Event.Target进行合并，然后让类可以定义一些自定义事件",
+	"name":"clone",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/clone.html",
+	"desc":"创建一个全新的对象",
 	"demo":[
 		{
-			"title":"创建一个类，并且附加一个方法",
-			"code":"http://jsbin.com/UwahAJo/1/embed?js,console",
-			"author":"zhangting"
-		},
-		{
-			"title":"测试白名单和覆盖",
-			"code":"http://jsbin.com/IjePOwO/1/embed?js,console",
-			"author":"zhangting"
+			"title":"复制对象",
+			"code":"http://demo.kissyui.com/#!/detail/uVQeiN",
+			"author":"紫英"
 		}
 	]
 }

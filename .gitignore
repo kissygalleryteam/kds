@@ -5,3 +5,5 @@ dist
 app/components
 *.idea
 *.iml
+
+1.0/demo/.DS_Store
