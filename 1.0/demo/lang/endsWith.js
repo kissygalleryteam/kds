@@ -1,13 +1,14 @@
 {
 	"package":"lang",
-	"name":"augment",
-	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/augment.html",
+	"name":"endsWith",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/endsWith.html",
 	"desc":"判断一个字符串是否以xxx结尾",
+	"version":">=1.2",
 	"demo":[
 		{
-			"title":"创建一个类，并且附加一个方法",
-			"code":"http://jsbin.com/UwahAJo/1/embed?js,console",
-			"author":"zhangting"
+			"title":"基本用法",
+			"code":"http://demo.kissyui.com/#!/detail/RxYxaM",
+			"author":"紫英"
 		}
 	]
 }

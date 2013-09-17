@@ -1,0 +1,14 @@
+{
+	"package":"lang",
+	"name":"escapeHTML",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/escapeHTML.html",
+	"desc":"转义html字符串",
+	"version":">=1.2",
+	"demo":[
+		{
+			"title":"官方demo",
+			"code":"http://jsbin.com/ABOCEgu/1/edit?html,js,console",
+			"author":"zhangting"
+		}
+	]
+}

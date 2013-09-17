@@ -1,0 +1,14 @@
+{
+	"package":"lang",
+	"name":"startsWith",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/startsWith.html",
+	"desc":"判断一个字符串是否以xxx开头",
+	"version":">=1.2",
+	"demo":[
+		{
+			"title":"基本用法",
+			"code":"http://demo.kissyui.com/#!/detail/LCuVeu",
+			"author":"紫英"
+		}
+	]
+}
