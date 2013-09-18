@@ -1,19 +1,19 @@
 {
-	"package":"lang",
-	"name":"augment",
-	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/augment.html",
-	"desc":"经常用于给一个类添加原型方法，经常出现在组件的初始化方法中，和mix用法基本一致",
-	"tip":"",
+	"package":"包名，必填",
+	"name":"函数名、类名或者组件名，必填",
+	"doc":"文档地址，可选",
+	"desc":"描述文案，可选",
+	"tip":"小提示，可选",
+	"version":"适用的kissy版本，可选，默认为通用",
 	"demo":[
 		{
-			"title":"创建一个类，并且附加一个方法",
-			"desc":"",
-			"code":"http://runjs.cn/gist/mjyuqgaa/js",
-			"type":"runjs"
-			"version":"",
-			"group":"",
-			"tip":"",
-			"author":"zhangting"
+			"title":"demo的标题，必填",
+			"desc":"demo的描述，可选",
+			"code":"demo的url，目前支持直接内嵌jsbin.com和jsfiddle.com的代码，如果是其他url，则直接展示url，必填",
+			"version":"可选，此处填写表示此demo只在特定版本下运行",
+			"group":"表示此demo所处的分组，同一分组的demo会展示在一起，可选",
+			"tip":"小贴士，可选",
+			"author":"作者，可选，不填则为匿名"
 		}
 	]
 }

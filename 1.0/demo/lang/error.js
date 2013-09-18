@@ -1,18 +1,14 @@
 {
 	"package":"lang",
-	"name":"augment",
-	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/augment.html",
-	"desc":"经常用于给一个类添加原型方法，经常出现在组件的初始化方法中，和mix用法基本一致",
-	"tip":"经常会和KISSY.Event.Target进行合并，然后让类可以定义一些自定义事件",
+	"name":"error",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/error.html",
+	"desc":"很少用到，在调试时希望抛出异常时才会用到",
+	"tip":"只有在 debug 模式下, 才会抛出异常",
+	"version":">=1.3",
 	"demo":[
 		{
-			"title":"创建一个类，并且附加一个方法",
-			"code":"http://jsbin.com/UwahAJo/1/embed?js,console",
-			"author":"zhangting"
-		},
-		{
-			"title":"测试白名单和覆盖",
-			"code":"http://jsbin.com/IjePOwO/1/embed?js,console",
+			"title":"抛出异常测试",
+			"code":"http://jsbin.com/uTAZisO/1/edit?html,js,console",
 			"author":"zhangting"
 		}
 	]
