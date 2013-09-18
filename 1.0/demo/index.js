@@ -38,6 +38,8 @@ var methodTpl = juicer([
     '</div>'
 ].join(''));
 
+var galleryWhileList = ['kissy-gallery', 'kpm', 'gallery-express', 'gallery-db', 'generator-kissy-gallery','switchable'];
+
 var container = $('#content');
 
 $(function(){
@@ -81,7 +83,9 @@ $(function(){
 							}
 							
 							$.each(data, function(idx, componet) {
-								ret.gallery.push(componet.name); 
+								if($.inArray(componet.name, galleryWhileList) == -1) {
+									ret.gallery.push(componet.name); 
+								}
 							});
 
 							callback(ret);
@@ -112,7 +116,6 @@ $(function(){
 							container.html(tpl.render({
 								data: t
 							}));
-
 
 						} else {
 							//方法模板的展现
