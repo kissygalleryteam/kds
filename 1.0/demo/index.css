@@ -2,8 +2,17 @@ body {
 	font-size: 15px;
 }
 
+.demo-header .main-link {
+	text-decoration: none;
+	color: #344951;
+}
+
 .navbar .nav > li {
 	float: none;
+}
+
+.demo-text-box {
+	float: left;
 }
 
 .demo-text-box p {

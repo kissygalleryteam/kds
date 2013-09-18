@@ -63,44 +63,86 @@ $(function(){
 			});
 		}
 
+		var getGalleryData = function () {
+			var page = 1,
+				ret = {gallery:[]};
+
+			return function(callback) {
+				$.get('https://api.github.com/orgs/kissygalleryteam/repos', {
+					page: page,
+					per_page: 100
+				}, function(data) {
+					if(data.length) {
+						if(data[0] && data[0].id === '772281') {
+							data.shift();
+						}
+						
+						$.each(data, function(idx, componet) {
+							ret.gallery.push(componet.name); 
+						});
+
+						callback(ret);
+					}
+				});
+			}
+		}();
+
 		return function(){
 			hashValue = location.hash ? location.hash.replace(/#/, '') : '';
 
 			if(hashValue) {
-				getData(hashValue, function(data) {
-					if(!/\//.test(hashValue)) {
-						//需要把其他不需要展现的内容删除
-						var t = {};
-						t[hashValue] = data[hashValue];
-
-						container.html(tpl.render({
-							data: t
-						}));
-					} else {
-						//方法模板的展现
-						container.html(methodTpl.render({
+				if(hashValue == 'gallery') {
+					//加载gallery
+					getGalleryData(function(data) {
+						container.append(tpl.render({
 							data: data
 						}));
-
-						JSBIN.flush();
-					}
-
-					//需要选中当前的菜单
-					var curMenu = location.hash ? location.hash.replace(/\/.*$/, '') : '';
-					$('#menu .active').removeClass('active');
-
-					$('#menu a').each(function(idx, el){
-						if($(el).attr('href') == curMenu) {
-							$(el).parent().addClass('active');
-						}
 					});
+				} else {
+					getData(hashValue, function(data) {
+						if(!/\//.test(hashValue)) {
+							//需要把其他不需要展现的内容删除
+							var t = {};
+							t[hashValue] = data[hashValue];
 
-				});
+							container.html(tpl.render({
+								data: t
+							}));
+
+
+						} else {
+							//方法模板的展现
+							container.html(methodTpl.render({
+								data: data
+							}));
+
+							JSBIN.flush();
+						}
+
+						//需要选中当前的菜单
+						var curMenu = location.hash ? location.hash.replace(/\/.*$/, '') : '';
+						$('#menu .active').removeClass('active');
+
+						$('#menu a').each(function(idx, el){
+							if($(el).attr('href') == curMenu) {
+								$(el).parent().addClass('active');
+							}
+						});
+					
+					});
+				}
 			} else {
 				getData('', function(data){
 					container.html(tpl.render({
 						data: data
 					}));
+
+					//加载gallery
+					getGalleryData(function(data) {
+						container.append(tpl.render({
+							data: data
+						}));
+					});
 				});
 			}
 		}
