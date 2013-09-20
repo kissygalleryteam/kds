@@ -76,6 +76,10 @@ body {
 	font-style: italic;
 }
 
+.demo-panel-title {
+	text-transform: capitalize;
+}
+
 footer {
 	margin-top: 50px;
 }
