@@ -3,7 +3,11 @@ var tpl = juicer([
 		'<div class="demo-text-box prl">',
 		    '<h3 class="demo-panel-title">${k}</h3>',
 		    '{@each it as it2}',
+		    '{@if typeof it2=="string"}',
 			'<p><a href="#${k}/${it2}">${it2}</a></p>',
+			'{@else}',
+			'<p><a href="#${k}/${it2.name}" title="${it2.desc}">${it2.name}</a>{@if it2.desc}<small title="${it2.desc}">${it2.desc}</small>{@/if}</p>',
+			'{@/if}',
 			'{@/each}',
 		'</div>',
 	'{@/each}'
@@ -20,6 +24,7 @@ var methodTpl = juicer([
     '</div>',
     '<div class="demo-content">',
         '<h2>Demos</h2>',
+        '{@if !data.demo.length}<div class="alert alert-info">当然无可查看的Demo，试试提交一个，做第一个吃螃蟹的人吧：）</div>{@/if}',
         '{@each data.demo as it}',
         '<div class="demo">',
             '<h4>${it.title} <small>提供者：{@if it.author}${it.author}{@else}匿名{@/if}</small>',
@@ -50,107 +55,174 @@ $(function(){
 
 	var render = function() {
 
-		var API = 'data.js';
+		var API = 'data.js',
+			galleryAPI = 'https://api.github.com/orgs/kissygalleryteam/repos';
 
-		var getData = function(param, callback) {
-			var useAPI = API;
+		var getData = function() {
+			var page = 1,
+				galleryReturnValue = {gallery:[]};
 
-			if(/\//.test(param)) {
-				useAPI = param + '.js';
+			var _initGalleryData = function(callback) {
+				$.get(galleryAPI, {
+					page: page,
+					per_page: 100
+				}, function(data) {
+					if(data.length) {
+						$.each(data, function(idx, componet) {
+							if($.inArray(componet.name, galleryWhileList) == -1) {
+								galleryReturnValue.gallery.push({
+									name: componet.name,
+									desc: componet.description
+								}); 
+							}
+						});
+
+						callback(galleryReturnValue);
+					}
+				});
 			}
 
-			$.getJSON(useAPI, function(data) {
-				data = typeof data == 'string' ? $.parseJSON(data) : data;
-				callback(data);
-			});
-		}
+			var _isGallery = function(s) {
+				return s === 'gallery';
+			}
 
-		var getGalleryData = function () {
-			var page = 1,
-				ret = {gallery:[]};
+			var _getGalleryData = function(params, callback) {
+				if(params.length && params.length == 2) {
+					//去抓github的gallery库
+					$.ajax('https://api.github.com/repos/kissygalleryteam/'+params[1]+'/contents/abc.json', {
+						dataType: "jsonp",
+						success: function(data) {
+							data = $.parseJSON($.base64Decode(data.data.content));
 
-			return function(callback) {
-				if(ret.gallery.length) {
-					callback(ret);
-				} else {
-					$.get('https://api.github.com/orgs/kissygalleryteam/repos', {
-						page: page,
-						per_page: 100
-					}, function(data) {
-						if(data.length) {
-							if(data[0] && data[0].id === '772281') {
-								data.shift();
-							}
-							
-							$.each(data, function(idx, componet) {
-								if($.inArray(componet.name, galleryWhileList) == -1) {
-									ret.gallery.push(componet.name); 
-								}
+							callback({
+								"package":"gallery",
+								"name":data.name,
+								"doc":'http://gallery.kissyui.com/'+data.name+'/'+data.version+'/guide/index.html',
+								"desc":data.desc,
+								"version":">=1.2",
+								"demo":[
+									{
+										"title":"官方demo",
+										"code": 'http://gallery.kissyui.com/'+data.name+'/'+data.version+'/demo/index.html',
+										"author":data.author.name
+									}
+								]
 							});
-
-							callback(ret);
+						},
+						error: function() {
+							//文件不存在的时候也返回一个内容
+							if(params.length == 2) {
+								callback({
+									"package":params[0],
+									"name":params[1],
+									"demo":[]
+								});
+							}
 						}
 					});
+				} else {
+					if(galleryReturnValue.gallery.length) {
+						callback(galleryReturnValue);
+					} else {
+						_initGalleryData(callback);
+					}
 				}
+			}
+
+			var _getInnerData = function(params, callback) {
+				var api = API;
+
+				if(params.length == 2) {
+					api = params.join('/') + '.js';
+				}
+
+				$.ajax(api, {
+					dataType: "json",
+					success: function(data) {
+						//如果只有一个参数，那么需要过滤其他的
+						if(params.length == 1) {
+							var t = {};
+							t[params[0]] = data[params[0]];
+							callback(t);
+						} else {
+							callback(data);
+						}
+					},
+					error: function() {
+						//文件不存在的时候也返回一个内容
+						if(params.length == 2) {
+							callback({
+								"package":params[0],
+								"name":params[1],
+								"demo":[]
+							});
+						}
+					}
+				});
+
+			}
+
+			return function(params, callback) {
+				//一级数据
+				if(params.length == 1) {
+					if(_isGallery(params[0])) {
+						_getGalleryData(params, callback);
+					} else {
+						_getInnerData(params, callback);
+					}
+				} else if(params.length == 2) {
+					if(_isGallery(params[0])) {
+						_getGalleryData(params, callback);
+					} else {
+						_getInnerData(params, callback);
+					}
+				} else {
+					_getInnerData(params, function(data) {
+						_getGalleryData(params, function(data2) {
+							data['gallery'] = data2['gallery'];
+							callback(data);
+						});
+					});
+				}
+			
 			}
 		}();
 
 		return function(){
 			hashValue = location.hash ? location.hash.replace(/#/, '') : '';
+			container.html('');
+			var params = hashValue ? hashValue.split('/') : [];
 
-			if(hashValue) {
-				if(hashValue == 'gallery') {
-					//加载gallery
-					getGalleryData(function(data) {
-						container.html(tpl.render({
-							data: data
-						}));
+			getData(params, function(data){
+
+				var html = '';
+
+				if(params.length == 2) {
+					html = methodTpl.render({
+						data: data
 					});
 				} else {
-					getData(hashValue, function(data) {
-						if(!/\//.test(hashValue)) {
-							//需要把其他不需要展现的内容删除
-							var t = {};
-							t[hashValue] = data[hashValue];
-
-							container.html(tpl.render({
-								data: t
-							}));
-
-						} else {
-							//方法模板的展现
-							container.html(methodTpl.render({
-								data: data
-							}));
-
-							JSBIN.flush();
-						}
+					html = tpl.render({
+						data: data
 					});
 				}
 
-				//需要选中当前的菜单
-				var curMenu = location.hash ? location.hash.replace(/\/.*$/, '') : '';
-				$('#menu .active').removeClass('active');
+				container.append(html);
+				JSBIN.flush();
+				
+				if(params.length) {
+					//需要选中当前的菜单
+					var curMenu = '#' + params[0];
+					$('#menu .active').removeClass('active');
 
-				$('#menu a').each(function(idx, el){
-					if($(el).attr('href') == curMenu) {
-						$(el).parent().addClass('active');
-					}
-				});
-			} else {
-				getData('', function(data){
-					container.html(tpl.render({
-						data: data
-					}));
-
-					//加载gallery
-					getGalleryData(function(data) {
-						container.append(tpl.render({
-							data: data
-						}));
+					$('#menu a').each(function(idx, el){
+						if($(el).attr('href') == curMenu) {
+							$(el).parent().addClass('active');
+						}
 					});
-				});
-			}
+				}
+				
+			});
 		}
 	}();
 
