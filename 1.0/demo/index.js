@@ -6,7 +6,7 @@ var tpl = juicer([
 		    '{@if typeof it2=="string"}',
 			'<p><a href="#${k}/${it2}">${it2}</a></p>',
 			'{@else}',
-			'<p><a href="#${k}/${it2.name}" title="${it2.desc}">${it2.name}</a>{@if it2.desc}<small title="${it2.desc}">${it2.desc}</small>{@/if}</p>',
+			'<p><a href="#${k}/${it2.name}"{@if it2.desc} title="${it2.desc}"{@/if}>{@if it2.alias}${it2.alias}{@else}${it2.name}{@/if}</a>{@if it2.desc}<small title="${it2.desc}">${it2.desc}</small>{@/if}</p>',
 			'{@/if}',
 			'{@/each}',
 		'</div>',
