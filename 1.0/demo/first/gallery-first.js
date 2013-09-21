@@ -13,7 +13,7 @@
 		{
 			"title":"gallery在kissy 1.3的基本使用",
 			"desc":"在kissy1.3中无需做任何配置就可以直接使用",
-			"code":"http://jsbin.com/EFizECi/1/edit?html,js,output"
+			"code":"http://jsbin.com/EFizECi/1/edit?html,js"
 		}
 	]
 }
