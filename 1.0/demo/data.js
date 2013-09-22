@@ -1,5 +1,15 @@
 {
-	"lang":[ "augment", "available", "bind", "buffer", "clone", "each", "endsWith", "error", "escapeHTML", "extend", "filter", "fromUnicode", "globalEval", "guid", "inArray", "indexOf", "isArray", "isBoolean", "isDate", "isEmptyObject", "isFunction", "isNull", "isNumber", "isObject", "isPlainObject", "isRegExp", "isString", "isUndefined", "isWindow", "keys", "lastIndexOf", "later", "log", "makeArray", "map", "merge", "mix", "namespace", "now", "param", "parseXML", "ready", "reduce", "startsWith", "substitute", "throttle", "trim", "unEscapeHTML", "unique", "unparam", "version" ],
+	"first":[
+        {
+            "name":"first",
+            "alias":"kissy基础入门"
+        },
+        {
+            "name":"gallery-first",
+            "alias":"gallery基础使用"
+        }
+    ],
+    "lang":[ "augment", "available", "bind", "buffer", "clone", "each", "endsWith", "error", "escapeHTML", "extend", "filter", "fromUnicode", "globalEval", "guid", "inArray", "indexOf", "isArray", "isBoolean", "isDate", "isEmptyObject", "isFunction", "isNull", "isNumber", "isObject", "isPlainObject", "isRegExp", "isString", "isUndefined", "isWindow", "keys", "lastIndexOf", "later", "log", "makeArray", "map", "merge", "mix", "namespace", "now", "param", "parseXML", "ready", "reduce", "startsWith", "substitute", "throttle", "trim", "unEscapeHTML", "unique", "unparam", "version" ],
     "loader":[ "add", "config", "getScript", "use", "importStyle" ],
     "dom":[ "selector","query","get","filter","test","clone","hasClass","addClass","removeClass","replaceClass","toggleClass","removeAttr","attr","hasAttr","prop","hasProp","val","text","css","style","width","height","innerWidth","innerHeight","outerWidth","outerHeight","addStyleSheet","show","hide","toggle","offset","scrollTop","scrollLeft","docHeight","docWidth","viewportHeight","viewportWidth","scrollIntoView","index","parent","next","prev","first","last","siblings","children","contains","create","html","remove","empty","insertBefore","insertAfter","append","prepend","replaceWith","data","removeData","hasData","unselectable","contents","wrap","wrapAll","unwrap","wrapInner","nodeName","outerHTML" ],
     "event":[ "on", "delegate","detach","undelegate","fire","fireHandler","Target","Object" ],
