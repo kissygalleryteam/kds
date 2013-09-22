@@ -17,6 +17,12 @@
 			"code":"http://jsbin.com/EmEFOQe/1/edit?html,js"
 		},
 		{
+			"title":"使用异步方式",
+			"desc":"当需要用到不同的kissy模块时，甚至于是自定义模块时，就需要使用到kissy的use方法",
+			"tip": "尽可能避免在代码中间使用use",
+			"code":"http://jsbin.com/ekiqanA/1/edit?html,js,console"
+		},
+		{
 			"title":"KISSY标准的模块化组织方式",
 			"tip":" 经常有看到最后一个参数为undefined的情况，原因见这里http://www.jb51.net/article/20991.htm",
 			"desc":"KISSY 1.2开始使用的是类似于commonJs规范的模块组织方式，这也是目前最流行的方式，gallery组件一般使用的就是这种方式",
