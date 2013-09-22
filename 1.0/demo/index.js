@@ -18,7 +18,7 @@ var methodTpl = juicer([
         '<div class="crumb">',
             '<a href="#">KISSY Demo Store</a> > <a href="#${data.package}">${data.package}</a> > <span>${data.name}</span>',
         '</div>',
-        '<h1>${data.name} <small>(kissy版本：{@if data.version}${data.version}{@else}通用{@/if})</small>{@if data.doc} <a href="${data.doc}" target="_blank"><img src="flat-ui/images/icons/clipboard@2x.png"></a>{@/if}</h1>',
+        '<h1>${data.name} <small>(kissy版本：{@if data.version}${data.version}{@else}通用{@/if})</small>{@if data.doc} <a href="${data.doc}" target="_blank"><img src="http://gtms03.alicdn.com/tps/i3/T1gRK4Fh0XXXcsSpY4-200-200.png"></a>{@/if}</h1>',
         '{@if data.desc}<p>${data.desc}</p>{@/if}',
         '{@if data.tip}<div class="alert alert-info">${data.tip}</div>{@/if}',
     '</div>',
