@@ -36,7 +36,7 @@
 		{
 			"title":"多模块编程",
 			"desc":"通过add、use、requires就可以完成简单的模块依赖",
-			"code":"http://jsbin.com/oNiPAwO/1/edit?html,js,console"
+			"code":"http://jsbin.com/oNiPAwO/3/edit?html,js,console"
 		},
 		{
 			"title":"",
