@@ -56,7 +56,8 @@ $(function(){
 	var render = function() {
 
 		var API = 'data.js',
-			galleryAPI = 'https://api.github.com/orgs/kissygalleryteam/repos';
+			galleryAPI = 'https://api.github.com/orgs/kissygalleryteam/repos',
+			loadingEl = $('.loading');
 
 		var getData = function() {
 			var page = 1,
@@ -133,7 +134,7 @@ $(function(){
 				var api = API;
 
 				if(params.length == 2) {
-					api = params.join('/') + '.js';
+					api = 'kissy/' + params.join('/') + '.js';
 				}
 
 				$.ajax(api, {
@@ -193,6 +194,8 @@ $(function(){
 			container.html('');
 			var params = hashValue ? hashValue.split('/') : [];
 
+			loadingEl.show();
+
 			getData(params, function(data){
 
 				var html = '';
@@ -221,6 +224,8 @@ $(function(){
 						}
 					});
 				}
+
+				loadingEl.hide();
 				
 			});
 		}
