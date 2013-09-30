@@ -1,7 +1,7 @@
 {
     "package": "lang",
     "name": "later",
-    "doc": "http://docs.kissyui.com/docs/html/api/seed/lang/later.html",
+    "doc": "http://docs.kissyui.com/docs/html/api/seed/kissy/later.html",
     "desc": "将函数延迟一段时间或者循环执行",
     "tip": "这个函数非常常用，集合了setTimeout和setInterval的功能",
     "demo": [
