@@ -64,23 +64,37 @@ $(function(){
 				galleryReturnValue = {gallery:[]};
 
 			var _initGalleryData = function(callback) {
-				$.get(galleryAPI, {
-					page: page,
-					per_page: 100
-				}, function(data) {
-					if(data.length) {
-						$.each(data, function(idx, componet) {
-							if($.inArray(componet.name, galleryWhileList) == -1) {
-								galleryReturnValue.gallery.push({
-									name: componet.name,
-									desc: componet.description
-								}); 
-							}
-						});
 
-						callback(galleryReturnValue);
-					}
-				});
+				function _loopGetData() {
+					$.get(galleryAPI, {
+						page: page,
+						per_page: 100
+					}, function(data) {
+						page++;
+
+						if(data.length) {
+							$.each(data, function(idx, componet) {
+								if($.inArray(componet.name, galleryWhileList) == -1) {
+									galleryReturnValue.gallery.push({
+										name: componet.name,
+										desc: componet.description
+									}); 
+								}
+							});
+
+							if(data.length < 100) {
+								callback(galleryReturnValue);
+							} else {
+								_loopGetData();
+							}
+						} else {
+							callback(galleryReturnValue);
+						}
+					});
+				}
+
+				_loopGetData();
+				
 			}
 
 			var _isGallery = function(s) {
