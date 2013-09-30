@@ -26,6 +26,5 @@
     "cookie":["cookie"],
     "anim":["anim"],
     "base":["base"],
-    "switchable":["switchable"],
-    "overlay":["overlay"]
+    "components":["switchable", "overlay"]
 }
