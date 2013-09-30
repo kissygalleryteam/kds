@@ -1,7 +1,7 @@
 {
     "package": "lang",
     "name": "mix",
-    "doc": "http://docs.kissyui.com/docs/html/api/core/lang/mix.html",
+    "doc": "http://docs.kissyui.com/docs/html/api/seed/lang/mix.html",
     "desc": "",
     "tip": "",
     "demo": []

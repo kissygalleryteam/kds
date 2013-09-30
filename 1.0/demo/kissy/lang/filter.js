@@ -1,7 +1,7 @@
 {
     "package": "lang",
     "name": "filter",
-    "doc": "http://docs.kissyui.com/docs/html/api/core/lang/filter.html",
+    "doc": "http://docs.kissyui.com/docs/html/api/seed/lang/filter.html",
     "desc": "过滤数组项",
     "tip": "",
     "demo": [

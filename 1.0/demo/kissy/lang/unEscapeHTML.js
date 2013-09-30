@@ -1,7 +1,7 @@
 {
     "package": "lang",
     "name": "unEscapeHTML",
-    "doc": "http://docs.kissyui.com/docs/html/api/core/lang/unEscapeHTML.html",
+    "doc": "http://docs.kissyui.com/docs/html/api/seed/lang/unEscapeHTML.html",
     "desc": "",
     "tip": "",
     "demo": []

@@ -1,7 +1,7 @@
 {
     "package": "lang",
     "name": "reduce",
-    "doc": "http://docs.kissyui.com/docs/html/api/core/lang/reduce.html",
+    "doc": "http://docs.kissyui.com/docs/html/api/seed/lang/reduce.html",
     "desc": "",
     "tip": "",
     "demo": []

@@ -1,7 +1,7 @@
 {
     "package": "lang",
     "name": "makeArray",
-    "doc": "http://docs.kissyui.com/docs/html/api/core/lang/makeArray.html",
+    "doc": "http://docs.kissyui.com/docs/html/api/seed/lang/makeArray.html",
     "desc": "",
     "tip": "",
     "demo": []
