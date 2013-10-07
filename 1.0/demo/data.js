@@ -17,8 +17,8 @@
     "ajax":[
         {
             "name":"io", 
-            "alias":"ajax模块的使用",
-            "desc":"集合所有ajax模块的demo"
+            "alias":"ajax模块的简单使用",
+            "desc":"集合ajax模块的最基础demo"
         }
     ],
     "json":["json"],

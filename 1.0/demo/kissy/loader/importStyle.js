@@ -1,7 +1,7 @@
 {
     "package": "loader",
     "name": "importStyle",
-    "doc": "http://docs.kissyui.com/docs/html/api/core/loader/importStyle.html",
+    "doc": "http://docs.kissyui.com/docs/html/api/seed/loader/importStyle.html",
     "desc": "",
     "tip": "",
     "demo": []
