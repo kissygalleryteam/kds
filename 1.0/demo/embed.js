@@ -25,13 +25,24 @@
         return query;
     }
 
+    function tryControl() {
+        JSBIN.counter = setTimeout(function(){
+            //5秒之后还在加载，则重试
+            if(JSBIN.flushing) {
+                var links = $('.jsbin-embed').toArray();
+                tryControl();
+                embed(links.shift(), links);
+            }
+        }, JSBIN.timeout);
+    }
+
     function embed(link, links) {
         var iframe = document.createElement('iframe'),
             url = link.href.replace(/edit/, 'embed');
         iframe.src = url;
         iframe._src = url; // support for google slide embed
-        iframe.className = link.className; // inherit all the classes from the link
-        iframe.id = link.id; // also inherit, giving more style control to the user
+//        iframe.className = link.className; // inherit all the classes from the link
+//        iframe.id = link.id; // also inherit, giving more style control to the user
         iframe.style.border = '1px solid #aaa';
 
         var query = getQuery(link.search);
@@ -42,6 +53,12 @@
         }
 
         $(iframe).load(function(ev) {
+            clearTimeout(JSBIN.counter);
+
+            if(links.length) {
+                tryControl();
+            }
+
             embed(links.shift(), links);
         });
 
@@ -52,7 +69,11 @@
         flush: function () {
             var links = $('.jsbin-embed').toArray();
 
+            JSBIN.flushing = true;
+            tryControl();
             embed(links.shift(), links);
-        }
+        },
+        flushing: false,
+        timeout: 6000
     }
 })();
