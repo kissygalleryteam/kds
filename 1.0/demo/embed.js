@@ -27,7 +27,7 @@
 
     function tryControl() {
         JSBIN.counter = setTimeout(function(){
-            //5ÃëÖ®ºó»¹ÔÚ¼ÓÔØ£¬ÔòÖØÊÔ
+            //5ç§’ä¹‹åè¿˜åœ¨åŠ è½½ï¼Œåˆ™é‡è¯•
             if(JSBIN.flushing) {
                 console.log('timeout');
                 var links = $('.jsbin-embed').toArray();
