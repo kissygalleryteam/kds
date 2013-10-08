@@ -2,6 +2,11 @@ body {
 	font-size: 15px;
 }
 
+.loading {
+	background: url(flat-ui/images/ajax-loader.gif) no-repeat 45% 50% transparent;
+	height: 100px;
+}
+
 .demo-header .main-link {
 	text-decoration: none;
 	color: #344951;

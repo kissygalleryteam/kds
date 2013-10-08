@@ -56,30 +56,45 @@ $(function(){
 	var render = function() {
 
 		var API = 'data.js',
-			galleryAPI = 'https://api.github.com/orgs/kissygalleryteam/repos';
+			galleryAPI = 'https://api.github.com/orgs/kissygalleryteam/repos',
+			loadingEl = $('.loading');
 
 		var getData = function() {
 			var page = 1,
 				galleryReturnValue = {gallery:[]};
 
 			var _initGalleryData = function(callback) {
-				$.get(galleryAPI, {
-					page: page,
-					per_page: 100
-				}, function(data) {
-					if(data.length) {
-						$.each(data, function(idx, componet) {
-							if($.inArray(componet.name, galleryWhileList) == -1) {
-								galleryReturnValue.gallery.push({
-									name: componet.name,
-									desc: componet.description
-								}); 
-							}
-						});
 
-						callback(galleryReturnValue);
-					}
-				});
+				function _loopGetData() {
+					$.get(galleryAPI, {
+						page: page,
+						per_page: 100
+					}, function(data) {
+						page++;
+
+						if(data.length) {
+							$.each(data, function(idx, componet) {
+								if($.inArray(componet.name, galleryWhileList) == -1) {
+									galleryReturnValue.gallery.push({
+										name: componet.name,
+										desc: componet.description
+									}); 
+								}
+							});
+
+							if(data.length < 100) {
+								callback(galleryReturnValue);
+							} else {
+								_loopGetData();
+							}
+						} else {
+							callback(galleryReturnValue);
+						}
+					});
+				}
+
+				_loopGetData();
+				
 			}
 
 			var _isGallery = function(s) {
@@ -133,7 +148,7 @@ $(function(){
 				var api = API;
 
 				if(params.length == 2) {
-					api = params.join('/') + '.js';
+					api = 'kissy/' + params.join('/') + '.js';
 				}
 
 				$.ajax(api, {
@@ -193,6 +208,8 @@ $(function(){
 			container.html('');
 			var params = hashValue ? hashValue.split('/') : [];
 
+			loadingEl.show();
+
 			getData(params, function(data){
 
 				var html = '';
@@ -221,6 +238,8 @@ $(function(){
 						}
 					});
 				}
+
+				loadingEl.hide();
 				
 			});
 		}
