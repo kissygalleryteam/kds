@@ -29,7 +29,6 @@
         JSBIN.counter = setTimeout(function(){
             //5秒之后还在加载，则重试
             if(JSBIN.flushing) {
-                console.log('timeout');
                 var links = $('.jsbin-embed').toArray();
                 tryControl();
                 embed(links.shift(), links);
