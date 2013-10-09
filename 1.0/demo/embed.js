@@ -37,6 +37,7 @@
     }
 
     function embed(link, links) {
+        if(!link) return;
         var iframe = document.createElement('iframe'),
             url = link.href.replace(/edit/, 'embed');
         iframe.src = url;
