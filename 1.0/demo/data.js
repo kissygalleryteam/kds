@@ -13,7 +13,7 @@
     "loader":[ "add", "config", "getScript", "use", "importStyle" ],
     "dom":[ {"name":"selector","alias":"kissy选择器"},"query","get","filter","test","clone","hasClass","addClass","removeClass","replaceClass","toggleClass","removeAttr","attr","hasAttr","prop","hasProp","val","text","css","style","width","height","innerWidth","innerHeight","outerWidth","outerHeight","addStyleSheet","show","hide","toggle","offset","scrollTop","scrollLeft","docHeight","docWidth","viewportHeight","viewportWidth","scrollIntoView","index","parent","next","prev","first","last","siblings","children","contains","create","html","remove","empty","insertBefore","insertAfter","append","prepend","replaceWith","data","removeData","hasData","unselectable","contents","wrap","wrapAll","unwrap","wrapInner","nodeName","outerHTML" ],
     "event":[ "on", "delegate","detach","undelegate","fire","fireHandler","Target","Object" ],
-    "node":[ "all", "one","getDOMNodes","getDOMNode","end","equals","add","item","slice","scrollTop","scrollLeft","height","width","addStyleSheet","append","appendTo","prepend","prependTo","insertBefore","before","after","insertAfter","animate","stop","pause","resume","isRunning","isPaused","show","hide","toggle","fadeIn","fadeOut","fadeToggle","slideDown","slideUp","slideToggle" ],
+    "node":[ {"name":"nodediff","alias":"node和dom模块"}, "all", "one","getDOMNodes","getDOMNode","end","equals","add","item","slice","scrollTop","scrollLeft","height","width","addStyleSheet","append","appendTo","prepend","prependTo","insertBefore","before","after","insertAfter","animate","stop","pause","resume","isRunning","isPaused","show","hide","toggle","fadeIn","fadeOut","fadeToggle","slideDown","slideUp","slideToggle" ],
     "ajax":[
         {
             "name":"io", 
