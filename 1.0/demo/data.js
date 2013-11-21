@@ -7,6 +7,10 @@
         {
             "name":"gallery-first",
             "alias":"gallery基础使用"
+        },
+        {
+            "name":"use-local",
+            "alias":"kissy和gallery的本地使用"
         }
     ],
     "lang":[ "augment", "available", "bind", "buffer", "clone", "each", "endsWith", "error", "escapeHTML", "extend", "filter", "fromUnicode", "globalEval", "guid", "inArray", "indexOf", "isArray", "isBoolean", "isDate", "isEmptyObject", "isFunction", "isNull", "isNumber", "isObject", "isPlainObject", "isRegExp", "isString", "isUndefined", "isWindow", "keys", "lastIndexOf", "later", "log", "makeArray", "map", "merge", "mix", "namespace", "now", "param", "parseXML", "ready", "reduce", "startsWith", "substitute", "throttle", "trim", "unEscapeHTML", "unique", "unparam", "version" ],
