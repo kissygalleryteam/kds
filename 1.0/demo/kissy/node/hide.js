@@ -2,7 +2,11 @@
     "package": "node",
     "name": "hide",
     "doc": "http://docs.kissyui.com/docs/html/api/core/node/hide.html",
-    "desc": "",
+    "desc": "隐藏元素",
     "tip": "",
-    "demo": []
+    "demo": [
+    	{
+    		"http://jsbin.com/aVaQUhE/6/edit?css,js"
+    	}
+    ]
 }
