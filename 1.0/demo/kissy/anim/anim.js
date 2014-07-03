@@ -6,8 +6,8 @@
     "tip": "",
     "demo": [
         {
-			"title":"动画demo",
-			"code":"http://jsbin.com/mayuhezo/3/edit?html,js,console"
-		}
+		"title":"动画demo",
+		"code":"http://jsbin.com/mayuhezo/3/edit?html,js,console"
+	}
     ]
 }
