@@ -1,0 +1,14 @@
+{
+	"package":"lang",
+	"name":"endsWith",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/endsWith.html",
+	"desc":"判断一个字符串是否以xxx结尾",
+	"version":">=1.2",
+	"demo":[
+		{
+			"title":"基本用法",
+			"code":"http://demo.kissyui.com/#!/detail/RxYxaM",
+			"author":"紫英"
+		}
+	]
+}

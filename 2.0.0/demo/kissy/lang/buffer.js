@@ -1,0 +1,17 @@
+{
+	"package":"lang",
+	"name":"buffer",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/buffer.html",
+	"desc":"让一个本应该执行的方法晚一些执行",
+	"tip":"经常用在scroll等连续事件中",
+	"version":">=1.2",
+	"demo":[
+		{
+			"title":"在响应式切换中做一些事情",
+			"desc":"在resize事件中减少触发函数的次数",
+			"tip":"此demo直接在浏览器看比较容易http://jsbin.com/ucaWAzo/1/",
+			"code":"http://jsbin.com/ucaWAzo/1/embed?html,js",
+			"author":"zhangting"
+		}
+	]
+}

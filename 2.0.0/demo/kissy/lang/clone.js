@@ -1,0 +1,13 @@
+{
+	"package":"lang",
+	"name":"clone",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/clone.html",
+	"desc":"创建一个全新的对象",
+	"demo":[
+		{
+			"title":"复制对象",
+			"code":"http://demo.kissyui.com/#!/detail/uVQeiN",
+			"author":"紫英"
+		}
+	]
+}

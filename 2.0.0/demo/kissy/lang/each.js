@@ -1,0 +1,14 @@
+{
+	"package":"lang",
+	"name":"each",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/each.html",
+	"desc":"循环",
+	"tip":"同jq的$.each",
+	"demo":[
+		{
+			"title":"循环数组，对象等",
+			"code":"http://jsbin.com/AHiMuGA/1/edit?html,js,console",
+			"author":"zhangting"
+		}
+	]
+}

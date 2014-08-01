@@ -1,0 +1,13 @@
+{
+	"package":"lang",
+	"name":"inArray",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/inArray.html",
+	"desc":"判断元素是否在数组中",
+	"demo":[
+		{
+			"title":"基本用法",
+			"code":"http://demo.kissyui.com/#!/detail/LYaQgm",
+			"author":"水澜"
+		}
+	]
+}
