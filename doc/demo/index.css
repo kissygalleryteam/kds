@@ -1,0 +1,90 @@
+body {
+	font-size: 15px;
+}
+
+.loading {
+	background: url(flat-ui/images/ajax-loader.gif) no-repeat 45% 50% transparent;
+	height: 100px;
+}
+
+.demo-header .main-link {
+	text-decoration: none;
+	color: #344951;
+}
+
+.navbar .nav > li {
+	float: none;
+}
+
+.demo-text-box {
+	float: left;
+}
+
+.demo-text-box p {
+	width: 190px;
+	height: 50px;
+	float: left;
+	overflow: hidden;
+	padding-right: 10px;
+}
+
+.demo-text-box small {
+	display: block;
+}
+
+.nav-tabs.nav-stacked > li > a {
+	text-decoration: none;
+	background-color: #ECF0F1;
+	color: #34495E;
+}
+
+.nav-tabs.nav-stacked > li > a:hover, .nav-tabs.nav-stacked > li > a:focus {
+	background-color: #34495E;
+	color: #ECF0F1;
+	text-shadow: none;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	background-color: #2C3E50;
+	color: #ECF0F1;
+	text-shadow: none;
+}
+
+.demo-header img{
+	width: 24px;
+}
+
+.demo {
+	margin-top: 20px;
+}
+
+.demo small {
+	margin-right: 20px;
+}
+
+.ks-version {
+	border: 2px solid #1abc9c;
+	border-radius: 6px;
+	float: right;
+	padding: 5px;
+}
+
+.demo-header h1 small {
+	font-size: 16px;
+}
+
+.demo-content {
+	margin-top: 40px;
+}
+
+.demo-content h2 {
+	font-style: italic;
+}
+
+.demo-panel-title {
+	text-transform: capitalize;
+}
+
+footer {
+	margin-top: 50px;
+}

@@ -1,0 +1,14 @@
+{
+	"package":"lang",
+	"name":"map",
+	"doc":"http://docs.kissyui.com/docs/html/api/seed/kissy/map.html",
+	"desc":"循环并对其中的数据进行操纵",
+	"version":">=1.2",
+	"demo":[
+		{
+			"title":"基本用法",
+			"code":"http://demo.kissyui.com/#!/detail/OlKQEL",
+			"author":"水澜"
+		}
+	]
+}
